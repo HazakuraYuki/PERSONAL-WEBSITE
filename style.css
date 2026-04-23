@@ -5,14 +5,11 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(
-        to bottom,
-        #0096c7 0%,     /* laut dalam */
-        #48cae4 30%,    /* laut */
-        #90e0ef 55%,    /* air dangkal */
-        #fff3d0 80%,    /* pasir */
-        #fdf6e3 100%    /* pantai */
-    );
+    background: linear-gradient(to 
+    bottom, 
+    #0077b6, 
+    #48cae4, 
+    #caf0f8);
 }
 
 /* NAVBAR */
@@ -194,5 +191,35 @@ iframe {
 
     .hero {
         height: 60vh;
+    }
+}
+
+/* WAVE CONTAINER */
+.waves {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.waves svg {
+    position: relative;
+    display: block;
+    width: 200%;
+    height: 150px;
+    animation: waveMove 8s linear infinite;
+}
+
+.wave2 svg {
+    animation: waveMove 12s linear infinite reverse;
+}
+
+/* ANIMASI GERAK */
+@keyframes waveMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
     }
 }
