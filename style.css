@@ -1,6 +1,12 @@
 /* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* ========================================
+   🌅 WARM BEACH THEME
+   Palette: Sunset coral, golden sand, 
+   warm peach, tropical teal accents
+   ======================================== */
+
 /* GLOBAL */
 * {
     margin: 0;
@@ -10,8 +16,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #0077b6, #00b4d8, #90e0ef);
+    background: linear-gradient(135deg, #f7c59f 0%, #f4a261 25%, #e9c46a 50%, #e76f51 80%, #d4533b 100%);
+    background-attachment: fixed;
     min-height: 100vh;
+    color: #3d2c2e;
 }
 
 /* NAVBAR */
@@ -19,18 +27,19 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: linear-gradient(90deg, #0077b6, #00b4d8, #48cae4);
+    background: linear-gradient(90deg, #e76f51, #f4a261, #e9c46a);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 20px rgba(231, 111, 81, 0.3);
 }
 
 nav h2 {
     margin: 0;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
 }
 
 nav ul {
@@ -46,35 +55,38 @@ nav ul li a {
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 8px;
-    transition: 0.4s;
+    transition: all 0.4s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 nav ul li a:hover {
-    background: linear-gradient(45deg, #00b4d8, #ffe8a1);
-    color: #003049;
+    background: linear-gradient(45deg, #ffe8a1, #ffd166);
+    color: #5e3023;
+    text-shadow: none;
+    transform: translateY(-2px);
 }
 
-/* HERO (LAUT) */
+/* HERO (PANTAI SUNSET) */
 .hero {
     background: linear-gradient(
         120deg,
-        #0077b6,
-        #00b4d8,
-        #90e0ef,
-        #00b4d8
+        #e76f51,
+        #f4a261,
+        #e9c46a,
+        #f4a261
     );
     background-size: 300% 300%;
-    animation: waterMove 8s ease infinite;
+    animation: sunsetShift 10s ease infinite;
 }
 
-@keyframes waterMove {
+@keyframes sunsetShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
 .hero h1 {
-    background: rgba(0, 119, 182, 0.6);
+    background: rgba(231, 111, 81, 0.5);
     padding: 20px 30px;
     border-radius: 10px;
     letter-spacing: 5px;
@@ -86,6 +98,7 @@ nav ul li a:hover {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    margin-top: -5px;
 }
 
 .wave-svg {
@@ -107,63 +120,79 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-/* CARD (PASIR + PUTIH) */
+/* PARAGRAF */
+.container p {
+    line-height: 1.7;
+    color: #4a3328;
+}
+
+.container strong {
+    color: #5e3023;
+}
+
+/* CARD (PASIR HANGAT) */
 .card {
-    background: #ffffff;
-    border-left: 6px solid #00b4d8;
+    background: linear-gradient(145deg, #fff8f0, #fdebd3);
+    border-left: 6px solid #e76f51;
     padding: 25px;
     border-radius: 15px;
     margin-bottom: 25px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 6px 25px rgba(231, 111, 81, 0.12);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(231, 111, 81, 0.2);
 }
 
-/* TITLE - putih untuk heading di atas background gradient */
+/* TITLE — krem terang di atas gradient background */
 h1, h2, h3 {
-    color: #fbfeff;
+    color: #fff5ee;
+    text-shadow: 1px 2px 4px rgba(94, 48, 35, 0.2);
 }
 
-/* Heading di dalam card harus berwarna gelap agar terbaca */
+/* Heading di dalam card — gelap agar terbaca */
 .card h1,
 .card h2,
 .card h3 {
-    color: #023e8a;
+    color: #5e3023;
+    text-shadow: none;
 }
 
 /* LINK STYLING */
 .container a {
-    color: #023e8a;
+    color: #e76f51;
     text-decoration: none;
-    border-bottom: 1px dashed #00b4d8;
-    transition: 0.3s;
+    border-bottom: 1px dashed #f4a261;
+    transition: all 0.3s ease;
 }
 
 .container a:hover {
-    color: #0077b6;
-    border-bottom-color: #0077b6;
+    color: #d4533b;
+    border-bottom-color: #d4533b;
 }
 
 /* BUTTON */
 button {
-    background: linear-gradient(45deg, #00b4d8, #90e0ef);
-    color: #003049;
+    background: linear-gradient(45deg, #e76f51, #f4a261);
+    color: #fff;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 24px;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: all 0.4s ease;
     font-weight: bold;
     font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
 }
 
 button:hover {
-    background: linear-gradient(45deg, #0077b6, #ffd166);
+    background: linear-gradient(45deg, #d4533b, #e76f51);
     color: white;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 111, 81, 0.4);
 }
 
 /* CV BUTTON */
@@ -174,20 +203,23 @@ button:hover {
 }
 
 .cv-links a {
-    background: linear-gradient(45deg, #00b4d8, #90e0ef);
-    color: #023e8a;
+    background: linear-gradient(45deg, #f4a261, #e9c46a);
+    color: #5e3023;
     padding: 12px 18px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     border-bottom: none;
+    box-shadow: 0 3px 10px rgba(244, 162, 97, 0.25);
 }
 
 .cv-links a:hover {
-    background: linear-gradient(45deg, #0077b6, #00b4d8);
+    background: linear-gradient(45deg, #e76f51, #f4a261);
     color: white;
     border-bottom: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(231, 111, 81, 0.3);
 }
 
 /* CONTACT */
@@ -201,6 +233,7 @@ iframe {
     width: 100%;
     border-radius: 12px;
     margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* FADE IN ANIMATION */
@@ -219,9 +252,10 @@ iframe {
 footer {
     text-align: center;
     padding: 25px 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 245, 238, 0.7);
     font-size: 14px;
     margin-top: 40px;
+    border-top: 1px solid rgba(255, 245, 238, 0.15);
 }
 
 /* NAVBAR MOBILE */
@@ -238,13 +272,13 @@ footer {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #0077b6;
+        background: linear-gradient(180deg, #e76f51, #d4533b);
         flex-direction: column;
         width: 200px;
         display: none;
         padding: 20px;
         border-radius: 0 0 0 12px;
-        box-shadow: -4px 4px 15px rgba(0,0,0,0.2);
+        box-shadow: -4px 4px 20px rgba(231, 111, 81, 0.3);
     }
 
     nav ul.active {
@@ -269,20 +303,21 @@ footer {
     }
 }
 
-/* CONTAINER OCEAN */
+/* CONTAINER OCEAN (PANTAI) */
 .ocean {
     position: relative;
     width: 100%;
     height: 150px;
     overflow: hidden;
+    background: linear-gradient(to bottom, transparent, rgba(233, 196, 106, 0.15));
 }
 
-/* WAVE (animasi ocean) */
+/* WAVE (animasi ombak pantai) */
 .wave {
     position: absolute;
     width: 200%;
     height: 100%;
-    background: rgba(255,255,255,0.25);
+    background: rgba(255, 245, 238, 0.2);
     border-radius: 1000px;
     opacity: 0.6;
     animation: waveMove 8s linear infinite;
@@ -291,7 +326,7 @@ footer {
 /* WAVE 2 (layer kedua) */
 .wave2 {
     top: 20px;
-    opacity: 0.4;
+    opacity: 0.35;
     animation: waveMove 12s linear infinite reverse;
 }
 
@@ -301,7 +336,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(to bottom, transparent, #90e0ef);
+    background: linear-gradient(to bottom, transparent, rgba(244, 162, 97, 0.2));
 }
 
 /* ANIMASI */
@@ -315,4 +350,28 @@ footer {
     100% {
         transform: translateX(-50%) translateY(0);
     }
+}
+
+/* SCROLLBAR CUSTOM */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fdebd3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #e76f51, #f4a261);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #d4533b, #e76f51);
+}
+
+/* SELECTION */
+::selection {
+    background: #f4a261;
+    color: #5e3023;
 }
