@@ -198,43 +198,50 @@ iframe {
     }
 }
 
-/* WAVE CONTAINER */
-.wave-container {
+/* CONTAINER OCEAN */
+.ocean {
     position: relative;
     width: 100%;
     height: 150px;
     overflow: hidden;
 }
 
-.wave-container::after {
+/* WAVE */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    border-radius: 1000px;
+    opacity: 0.6;
+    animation: waveMove 8s linear infinite;
+}
+
+/* WAVE 2 (layer kedua) */
+.wave2 {
+    top: 20px;
+    opacity: 0.4;
+    animation: waveMove 12s linear infinite reverse;
+}
+
+.ocean::after {
     content: "";
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(to bottom, transparent, #fff3d0);
-}
-
-.wave {
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    animation: waveMove 10s linear infinite;
-}
-
-.wave2 {
-    animation: waveMove 15s linear infinite reverse;
-    opacity: 0.7;
+    background: linear-gradient(to bottom, transparent, #90e0ef);
 }
 
 /* ANIMASI */
 @keyframes waveMove {
     0% {
-        transform: translateX(0);
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(10px);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(0);
     }
 }
