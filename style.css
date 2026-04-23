@@ -1,24 +1,31 @@
-/* GOOGLE FONT (optional tapi bagus) */
+/* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* GLOBAL */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to bottom, #0077b6, #00b4d8, #90e0ef);
+    min-height: 100vh;
 }
 
 /* NAVBAR */
 nav {
     position: sticky;
     top: 0;
+    z-index: 1000;
     background: linear-gradient(90deg, #0077b6, #00b4d8, #48cae4);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 nav h2 {
@@ -73,6 +80,26 @@ nav ul li a:hover {
     letter-spacing: 5px;
 }
 
+/* WAVE CONTAINER (SVG waves) */
+.wave-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.wave-svg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 /* CONTAINER */
 .container {
     max-width: 900px;
@@ -95,9 +122,29 @@ nav ul li a:hover {
     transform: translateY(-5px);
 }
 
-/* TITLE */
+/* TITLE - putih untuk heading di atas background gradient */
 h1, h2, h3 {
     color: #fbfeff;
+}
+
+/* Heading di dalam card harus berwarna gelap agar terbaca */
+.card h1,
+.card h2,
+.card h3 {
+    color: #023e8a;
+}
+
+/* LINK STYLING */
+.container a {
+    color: #023e8a;
+    text-decoration: none;
+    border-bottom: 1px dashed #00b4d8;
+    transition: 0.3s;
+}
+
+.container a:hover {
+    color: #0077b6;
+    border-bottom-color: #0077b6;
 }
 
 /* BUTTON */
@@ -110,6 +157,7 @@ button {
     cursor: pointer;
     transition: 0.4s;
     font-weight: bold;
+    font-size: 14px;
 }
 
 button:hover {
@@ -133,11 +181,13 @@ button:hover {
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+    border-bottom: none;
 }
 
 .cv-links a:hover {
     background: linear-gradient(45deg, #0077b6, #00b4d8);
     color: white;
+    border-bottom: none;
 }
 
 /* CONTACT */
@@ -165,11 +215,21 @@ iframe {
     transform: translateY(0);
 }
 
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-top: 40px;
+}
+
 /* NAVBAR MOBILE */
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
+    color: white;
 }
 
 /* RESPONSIVE */
@@ -183,6 +243,8 @@ iframe {
         width: 200px;
         display: none;
         padding: 20px;
+        border-radius: 0 0 0 12px;
+        box-shadow: -4px 4px 15px rgba(0,0,0,0.2);
     }
 
     nav ul.active {
@@ -196,6 +258,15 @@ iframe {
     .hero {
         height: 60vh;
     }
+
+    .container {
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .cv-links {
+        flex-direction: column;
+    }
 }
 
 /* CONTAINER OCEAN */
@@ -206,7 +277,7 @@ iframe {
     overflow: hidden;
 }
 
-/* WAVE */
+/* WAVE (animasi ocean) */
 .wave {
     position: absolute;
     width: 200%;

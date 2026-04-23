@@ -1,24 +1,27 @@
+// NAVIGASI KE ABOUT
 function goToAbout() {
-    window.location.href = "about.html";
+    window.location.href = "ABOUT/about.html";
 }
 
-function sayHello() {
-    alert("Halo! Selamat datang 😄");
-}
-
-// ANIMASI SCROLL
+// ANIMASI SCROLL (FADE IN)
 const faders = document.querySelectorAll('.fade-in');
 
-window.addEventListener('scroll', () => {
-    faders.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            el.classList.add('show');
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px"
+};
+
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
         }
     });
-});
+}, observerOptions);
 
-// NAVBAR TOGGLE
+faders.forEach(el => fadeObserver.observe(el));
+
+// NAVBAR TOGGLE (MOBILE)
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
 }
