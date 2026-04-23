@@ -53,13 +53,21 @@ nav ul li a:hover {
 
 /* HERO (LAUT) */
 .hero {
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    background: linear-gradient(
+        120deg,
+        #0077b6,
+        #00b4d8,
+        #90e0ef,
+        #00b4d8
+    );
+    background-size: 300% 300%;
+    animation: waterMove 8s ease infinite;
+}
+
+@keyframes waterMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero h1 {
